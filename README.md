@@ -10,10 +10,9 @@ calling application can use FreeRTOS to dispatch events on a task.
 - `Timeout`: one-shot alarm with `attach` and `detach`.
 - `EventQueue`: fixed-size callback queue; `event(callback)` returns a small
   callback that posts work for later `dispatch_pending()`.
-- `EventQueueHolder`: singleton owning the main EventQueue.
 
 `Ticker` and `Timeout` callbacks run in an alarm interrupt. Wrap application
-work in `EventQueueHolder::getInstance().getMainEventQueue().event(callback)`
+work in `queue.event(callback)`
 when it should run on the task that calls `dispatch_pending()`.
 
 ## CMake

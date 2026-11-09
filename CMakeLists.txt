@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.17)
 
 add_library(pico_core STATIC
     src/event_queue.cpp
-    src/event_queue_holder.cpp
     src/timer.cpp
     src/ticker.cpp
     src/timeout.cpp
